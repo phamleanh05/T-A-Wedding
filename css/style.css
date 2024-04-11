@@ -248,7 +248,7 @@ footer{
 	width: 100%;
 	height: 100%;
 	opacity:0;
-	visibility: hidden;
+	visibility: visible;
 	transition: all 1s ease-in-out;
 }
 .home-section .slide.active{
