@@ -1,0 +1,178 @@
+/* html {
+  background: #f5f7f9;
+  height: 100%;
+  font-family: 'Roboto Mono', monospace;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+} */
+
+hr {
+  border: 0;
+  border-top: 1px solid #e6e6e6;
+  margin: 12px 0;
+}
+
+.boarding-pass {
+  display: flex;
+  border-radius: 24px;
+  box-shadow: 0 2px 6px 0 rgba(#000, 0.1);
+  width: 700px;
+  height: 284px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 180px;
+  border-left: 1px dashed #e6e6e6;
+  
+  .top-stripe {
+    justify-content: center;
+    
+    i {
+      margin-left: 8px;
+    }
+  }
+}
+
+.top-stripe {
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  height: 36px;
+  background: #92c9e0;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.left-body {
+  padding: 12px 24px;
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.left-middle {
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+}
+
+.to {
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 12px;
+  color: #888;
+}
+
+.flight-icon {
+  transform: rotate(90deg);
+}
+
+.name {
+  flex: 1;
+  padding: 0 16px;
+  text-align: center;
+  color: #92c9e0;
+  
+  strong {
+    font-weight: bold;
+    font-size: 24px;    
+  }
+}
+
+.grid {
+  display: flex;
+  margin-left: -16px;
+}
+
+.grid-item {
+  flex: 1 1 auto;
+  padding-left: 16px;
+}
+
+label {
+  display: block;
+  font-size: 8px;
+  color: #888;
+  margin-bottom: 4px;
+  
+  * + & {
+    margin-top: 8px;
+  }
+}
+
+.value {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.qr-code {
+  width: 60px;
+  height: 60px;
+  background: #f5f5f5;
+  margin-bottom: 8px;
+}
+
+.more-info {
+  font-size: 8px;
+  font-weight: 300;
+}
+
+.right-body {
+  padding: 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.join {
+  font-size: 12px;
+  background: #eee;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  color: #666;
+}
+
+.date {
+  border: 1px solid #e6e6e6;
+  padding: 12px;
+  text-align: center;
+  
+  div {
+    font-size: 48px;
+    font-weight: bold;
+  }
+}
+
+.bar-code {
+  margin-top: 16px;
+  background: #f5f5f5;
+  height: 32px;
+  width: 120px;
+}

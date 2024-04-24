@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "chrome",
+            "type":"msedge",
             "request": "launch",
             "name": "Open index.html",
-            "file": "/Users/admin/Documents/T-AWEDDING/T-A-Wedding/index.html"
+            "file": "D:/T-A-Wedding/index.html"
         }
     ]
 }
