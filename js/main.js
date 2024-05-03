@@ -129,6 +129,89 @@
             $(".gallery-popup").removeClass("open");   	
          }
     })
+
+	//thiep popup
+	$(".thiep-popup .tp-img").css("max-height",wHeight + "px");
+   
+	const totalThiepItems = $(".thiep-item").length;
+
+	$(".thiep-item").click(function(){
+		itemThiep = $(this).index();
+		$(".thiep-popup").addClass("open");
+		$(".thiep-popup .tp-img").hide();
+			tpSlideShow();
+
+	})
+	$(".tp-controls .next").click(function(){
+		if(itemThiep == totalThiepItems-1){
+			itemThiep = 0;
+		}
+		else{
+			itemThiep++;
+		}
+		$(".thiep-popup .tp-img").fadeOut(function(){
+			tpSlideShow();    		
+		})
+	})
+
+	$(".tp-controls .prev").click(function(){
+		if(itemThiep === 0){
+			itemThiep = totalThiepItems-1;
+		}
+		else{
+			itemThiep--;
+		}
+		$(".thiep-popup .tp-img").fadeOut(function(){
+			tpSlideShow();    		
+		})
+	})
+
+	function tpSlideShow(){
+		const imgSrc = $(".thiep-item").eq(itemThiep).find("img").attr("data-large");
+		$(".thiep-popup .tp-img").fadeIn().attr("src",imgSrc);
+		$(".tp-counter").text((itemThiep+1) +"/"+ totalThiepItems);
+	  }
+  
+	  // hide gallery popup
+	  $(".tp-close").click(function(){
+		  $(".thiep-popup").removeClass("open");
+	  })
+  
+	  //  hide gallery popup when clicked outside of gp-container
+	  $(".thiep-popup").click(function(event){
+		   if($(event.target).hasClass("open")){
+			  $(".thiep-popup").removeClass("open");   	
+		   }
+	  })
+
+	// Set the date we're counting down to
+	var countDownDate = new Date("May 25, 2024 17:30").getTime();
+
+	// Update the countdown every 1 second
+	var x = setInterval(function() {
+
+	// Get the current date and time
+	var now = new Date().getTime();
+		
+	// Calculate the remaining time
+	var distance = countDownDate - now;
+		
+	// Calculate days, hours, minutes, and seconds
+	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	// var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		
+	// Display the result in the element with id="countdown"
+	document.getElementById("countdown").innerHTML = days + " ngày " + hours + " tiếng "
+	+ minutes + " phút ";
+		
+	// If the countdown is finished, display some text
+	if (distance < 0) {
+		clearInterval(x);
+		document.getElementById("countdown").innerHTML = "EXPIRED";
+	}
+	}, 1000);
  })
 
 

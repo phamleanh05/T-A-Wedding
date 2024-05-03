@@ -954,168 +954,124 @@ hr {
 	margin: 12px 0;
 }
 
-.boarding-pass {
-	display: flex;
-	border-radius: 24px;
-	box-shadow: 0 2px 6px 0 rgba(#000, 0.1);
-	width: 700px;
-	height: 284px;
-	background: #fff;
+/* thiep section */
+
+.thiep-section{
+	padding: 40px 0 40px;
+}
+
+.thiep-section .section-title{
+	margin-bottom: 20px;
+}
+.thiep-section .thiep-item{
+	flex:auto;
+	max-width: 50%;
+	padding:15px;
+}
+.thiep-section .thiep-item-inner{
 	overflow: hidden;
+	cursor: pointer;
+}
+.thiep-section .thiep-item-inner img{
+	width: 100%;
+	transform: scale(1.1);
+	transition: all 0.5s ease;
+}
+.thiep-section .thiep-item-inner:hover img{
+	transform: scale(1);
+}
+
+/* thiep popup */
+.thiep-popup{
+	cursor: zoom-out;
+	position: fixed;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%; 
+	z-index:1099;
+	background-color: rgba(0,0,0,0.8);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	display: none;
 }
-
-.left {
-	flex: 1;
-	.top-stripe{
-		margin-top: 22px;
-	}
-}
-
-.right {
+.thiep-popup.open{
 	display: flex;
-	flex-direction: column;
-	flex-basis: 180px;
-	border-left: 1px dashed #e6e6e6;
-	
-	.top-stripe {
-		justify-content: center;
-		
-		i {
-		margin-left: 8px;
-		}
-	}
 }
-
-.top-stripe {
-	display: flex;
-	align-items: center;
-	padding: 0 24px;
-	height: 36px;
-	background: #92c9e0;
-	color: #fff;
-	text-transform: uppercase;
+.thiep-popup img.tp-img{
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	padding: 40px 0;
+}
+.thiep-popup .tp-container{
+	position: relative;
+	cursor: auto;
+}
+.thiep-popup .tp-counter{
+	display: block;
+	height: 40px;
+	color: #ffffff;
+	font-size: 16px;
+	position: absolute;
+	left:0;
+	top:0;
+	line-height: 40px;
 	font-weight: bold;
 }
-
-.left-body {
-  	padding: 12px 24px;
-}
-
-.left-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	font-size: 10px;
-	font-weight: 300;
-	text-transform: uppercase;
-	color: #888;
-}
-
-.left-middle {
-	display: flex;
-	align-items: center;
-	font-weight: 300;
-}
-
-.to {
-	border-left: 1px solid #e6e6e6;
-	border-right: 1px solid #e6e6e6;
-	align-self: stretch;
-	display: flex;
-	align-items: center;
-	padding: 0 16px;
-	font-size: 12px;
-	color: #888;
-}
-
-.flight-icon {
-  	transform: rotate(90deg);
-}
-
-.name {
-	flex: 1;
-	padding: 0 16px;
-	text-align: center;
-	color: #92c9e0;
-	
-	strong {
-		font-weight: bold;
-		font-size: 24px;    
-	}
-}
-
-.grid {
-	display: flex;
-	margin-left: -16px;
-}
-
-.grid-item {
-	flex: 1 1 auto;
-	padding-left: 16px;
-}
-
-label {
+.thiep-popup .tp-close{
 	display: block;
-	font-size: 8px;
-	color: #888;
-	margin-bottom: 4px;
-	
-	* + & {
-		margin-top: 8px;
-	}
+	height: 40px;
+	width: 40px;
+	color: #ffffff;
+	font-size: 30px;
+	position: absolute;
+	right:0;
+	top:0;
+	text-align: center;
+	line-height: 38px;
+	overflow: hidden;
+	cursor: zoom-out;
 }
-
-.value {
-	font-size: 12px;
-	font-weight: 300;
-}
-
-.qr-code {
-	width: 60px;
-	height: 60px;
-	background: #f5f5f5;
-	margin-bottom: 8px;
-}
-
-.more-info {
-	font-size: 8px;
-	font-weight: 300;
-}
-
-.right-body {
-	padding: 24px 24px;
+.thiep-popup .tp-controls{
+	position: absolute;
+	left:0;
+	bottom:0;
+	height: 40px;
+	width: 100%;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
-
-.join {
-	font-size: 12px;
-	background: #eee;
-	padding: 2px 8px;
-	border-radius: 6px;
-	margin-bottom: 16px;
-	color: #666;
+.thiep-popup .tp-controls .prev,
+.thiep-popup .tp-controls .next{
+	display: inline-block;
+	margin:0 10px;
 }
-
-.datein {
-	border: 1px solid #c20a0a;
-	padding: 12px;
-	text-align: center;
-	
-	div {
-		font-size: 48px;
-		font-weight: bold;
-	}
+.thiep-popup .tp-controls .prev i,
+.thiep-popup .tp-controls .next i{
+   color:#ffffff;
+   font-size: 20px;
+   display: block;
+   height: 30px;
+   width: 30px;
+   text-align: center;
+   line-height: 30px;
+   cursor: pointer;
+   border-radius: 2px;
+   transition: all 0.5s ease;
 }
-
-.bar-code {
-	margin-top: 16px;
-	background: #f5f5f5;
-	height: 32px;
-	width: 120px;
+.thiep-popup .tp-controls .prev:hover i,
+.thiep-popup .tp-controls .next:hover i{
+	background-color: rgba(0,0,0,0.8);
 }
+  
+#countdown {
+	font-size: 2em;
+	font-weight: bold;
+	color: black;
+	font-family: "Great Vibes", cursive;
+	padding-top: 20px;
+}
+  
